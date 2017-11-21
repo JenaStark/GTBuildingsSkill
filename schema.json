@@ -1,0 +1,185 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "BuildingName",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Klaus",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Howey",
+              "synonyms": [
+                "Physics Building"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "College of Computing",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "CRC",
+              "synonyms": [
+                "Campus Recreation Center"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Sheller College of Business",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Barnes and Noble",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Instructional Center",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Student Center",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Weber",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bunger Henry",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Van Leer",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "DM Smith",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Library",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Clough",
+              "synonyms": [
+                "Culc"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Boggs",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "GetBuildingAddress",
+        "samples": [
+          "Give me the address of {BuildingName}",
+          "What's the address for {BuildingName}",
+          "Give me the address for {BuildingName}"
+        ],
+        "slots": [
+          {
+            "name": "BuildingName",
+            "type": "BuildingName",
+            "samples": [
+              "{BuildingName}"
+            ]
+          }
+        ]
+      }
+    ],
+    "invocationName": "georgia tech buildings"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetBuildingAddress.IntentSlot-BuildingName",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is the building name?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "GetBuildingAddress",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "BuildingName",
+            "type": "BuildingName",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetBuildingAddress.IntentSlot-BuildingName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
